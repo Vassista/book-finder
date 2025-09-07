@@ -1,0 +1,9 @@
+{
+  "infiniteLoopProtection": true,
+  "hardReloadOnChange": false,
+  "view": "browser",
+  "template": "vite-react-ts",
+  "node": "18",
+  "startScript": "dev",
+  "buildCommand": "build"
+}

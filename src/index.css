@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Book Finder Design System - Literary & Modern */
+
+@layer base {
+  :root {
+    /* ============================= */
+    /* New Design System – Asterion */
+    /* Focus: calm neutrals + crisp accent, high legibility, minimal chrome */
+    /* ============================= */
+
+    /* Primitive neutrals (light) */
+    --color-base-0: 210 30% 99%;
+    --color-base-50: 210 25% 97%;
+    --color-base-100: 210 20% 95%;
+    --color-base-200: 214 20% 90%;
+    --color-base-300: 216 15% 82%;
+    --color-base-400: 218 12% 65%;
+    --color-base-500: 220 10% 50%;
+    --color-base-600: 222 12% 40%;
+    --color-base-700: 224 14% 30%;
+    --color-base-800: 226 18% 20%;
+    --color-base-900: 228 22% 12%;
+
+    /* Brand & semantic */
+    --color-brand: 222 90% 55%; /* Azure */
+    --color-brand-hover: 222 90% 50%;
+    --color-brand-muted: 222 90% 92%;
+    --color-accent: 270 75% 60%; /* Violet accent for subtle highlights */
+    --color-accent-soft: 270 75% 90%;
+    --color-warn: 40 95% 55%;
+    --color-danger: 0 72% 55%;
+    --color-success: 150 65% 40%;
+
+    /* Application tokens (light) */
+    --background: var(--color-base-0);
+    --foreground: var(--color-base-800);
+    --card: var(--color-base-0);
+    --card-foreground: var(--color-base-800);
+    --card-hover: var(--color-base-50);
+    --muted: var(--color-base-50);
+    --muted-foreground: var(--color-base-500);
+    --primary: var(--color-brand);
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: var(--color-brand-hover);
+    --secondary: var(--color-accent-soft);
+    --secondary-foreground: var(--color-base-700);
+    --secondary-muted: var(--color-accent-soft);
+    --accent: var(--color-brand);
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: var(--color-brand-hover);
+    /* Missing tokens restored for shadcn components */
+    --popover: var(--card);
+    --popover-foreground: var(--card-foreground);
+    --tooltip: var(--color-base-800);
+    --tooltip-foreground: 0 0% 100%;
+    --border: var(--color-base-200);
+    --input: var(--color-base-200);
+    --ring: var(--color-brand);
+    --destructive: var(--color-danger);
+    --destructive-foreground: 0 0% 100%;
+
+    /* Radius & elevation */
+    --radius: 0.65rem;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(140deg,hsl(var(--color-base-50)) 0%,hsl(var(--color-brand-muted)) 30%,hsl(var(--color-accent-soft)) 100%);
+    --gradient-dark-hero: radial-gradient(circle at 20% 20%,hsl(220 60% 18%) 0%,hsl(222 65% 12%) 40%,hsl(230 50% 8%) 100%);
+    --gradient-card: linear-gradient(145deg,hsl(var(--color-base-0)) 0%,hsl(var(--color-base-50)) 100%);
+    --gradient-outline: linear-gradient(120deg,hsl(var(--color-brand)/0.35),hsl(var(--color-accent)/0.35));
+
+    /* Shadows (tailored to neutral surfaces) */
+    --shadow-soft: 0 2px 6px -1px hsl(var(--color-base-900)/0.05),0 4px 12px -2px hsl(var(--color-base-900)/0.06);
+    --shadow-medium: 0 4px 14px -3px hsl(var(--color-base-900)/0.08),0 12px 28px -4px hsl(var(--color-base-900)/0.12);
+    --shadow-large: 0 18px 40px -8px hsl(var(--color-base-900)/0.24);
+    --shadow-glow: 0 0 0 1px hsl(var(--color-brand)/0.5),0 0 24px -4px hsl(var(--color-brand)/0.55);
+
+    /* Motion */
+    --transition-smooth: all 0.28s cubic-bezier(.4,0,.2,1);
+    --transition-bounce: all 0.45s cubic-bezier(.19,1,.22,1);
+
+    /* Sidebar (light) */
+    --sidebar-background: var(--color-base-0);
+    --sidebar-foreground: var(--color-base-700);
+    --sidebar-primary: var(--color-brand);
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: var(--color-base-50);
+    --sidebar-accent-foreground: var(--color-base-700);
+    --sidebar-border: var(--color-base-200);
+    --sidebar-ring: var(--color-brand);
+  }
+
+  .dark {
+    /* Dark mode remap to richer, more spacious palette */
+    --background: 222 43% 6%;
+    --foreground: 220 18% 92%;
+    --card: 222 42% 8%;
+    --card-foreground: 220 18% 92%;
+    --card-hover: 222 40% 10%;
+    --muted: 222 32% 14%;
+    --muted-foreground: 220 12% 60%;
+    --primary: 222 90% 62%;
+    --primary-foreground: 220 30% 6%;
+    --primary-glow: 222 90% 70%;
+    --secondary: 270 55% 18%;
+    --secondary-foreground: 270 70% 85%;
+    --secondary-muted: 270 50% 14%;
+    --accent: 222 90% 62%;
+    --accent-foreground: 220 30% 6%;
+    --accent-hover: 222 90% 55%;
+    --popover: var(--card);
+    --popover-foreground: var(--card-foreground);
+    --tooltip: 222 42% 14%;
+    --tooltip-foreground: 220 18% 92%;
+    --border: 222 32% 18%;
+    --input: 222 32% 20%;
+    --ring: 222 90% 62%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --gradient-hero: var(--gradient-dark-hero);
+    --gradient-card: linear-gradient(160deg,hsl(222 42% 10%) 0%,hsl(222 42% 6%) 100%);
+    --shadow-soft: 0 2px 8px -2px hsl(210 50% 2% / 0.55),0 4px 14px -4px hsl(210 50% 2% / 0.4);
+    --shadow-medium: 0 6px 22px -6px hsl(210 50% 2% / 0.6),0 16px 42px -10px hsl(210 50% 2% / 0.5);
+    --shadow-large: 0 20px 60px -15px hsl(210 50% 2% / 0.65);
+    --shadow-glow: 0 0 0 1px hsl(var(--primary)/0.6),0 0 32px -2px hsl(var(--primary)/0.55);
+    --sidebar-background: 222 42% 8%;
+    --sidebar-foreground: 220 18% 92%;
+    --sidebar-primary: 222 90% 62%;
+    --sidebar-primary-foreground: 220 30% 6%;
+    --sidebar-accent: 222 32% 14%;
+    --sidebar-accent-foreground: 220 18% 92%;
+    --sidebar-border: 222 32% 18%;
+    --sidebar-ring: 222 90% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variant-numeric: oldstyle-nums;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair font-medium;
+  }
+
+  .hero-gradient { background: var(--gradient-hero); }
+  .surface { @apply bg-card/80 backdrop-blur supports-[backdrop-filter]:bg-card/70 border border-border; }
+  .surface-dark { @apply bg-card/60 backdrop-blur supports-[backdrop-filter]:bg-card/50 border border-border; }
+  .focus-ring { box-shadow: 0 0 0 2px hsl(var(--background)),0 0 0 4px hsl(var(--ring)); }
+  .outline-gradient { background: var(--gradient-outline); }
+  .card-gradient { background: var(--gradient-card); }
+
+  /* Typography scale refinement */
+  h1 { letter-spacing:-.02em; }
+  h2 { letter-spacing:-.015em; }
+  h3 { letter-spacing:-.01em; }
+
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-medium { box-shadow: var(--shadow-medium); }
+  .shadow-large { box-shadow: var(--shadow-large); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+}
